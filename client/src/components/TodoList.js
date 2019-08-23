@@ -12,10 +12,10 @@ export default function TodoList() {
   function libraryPriority(prio) {
     let library = [["High", 1], ["Medium", 2], ["Low", 3]];
 
-    if (prio === undefined) {
+    if (prio === undefined || prio === 0) {
       return undefined;
     }
-    if (typeof prio == "number") {
+    if (typeof prio === "number") {
       return library.filter(e => e[1] === prio)[0][0];
 
     } else {
@@ -78,7 +78,7 @@ export default function TodoList() {
         <h3 className="headers">My todo list:</h3>
         <Row
           className="table-description"
-          style={{ fontSize: "0.8em", fontWeight: "600" }}
+          style={{ fontSize: "em", fontWeight: "600" }}
         >
           <Col xs={3} md={3}>
             Task description:
@@ -98,7 +98,7 @@ export default function TodoList() {
 
         {todoList.map(function (todo) {
           return (
-            <Row key={todo.id} style={{ fontSize: "0.8em" }}>
+            <Row key={todo.id} style={{ fontSize: "1em" }}>
               <Col xs={3} md={3} >
                 {todo.task}
                 <hr />
