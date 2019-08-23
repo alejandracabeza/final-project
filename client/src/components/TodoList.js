@@ -11,16 +11,16 @@ export default function TodoList() {
 
   function libraryPriority(prio) {
     let library = [["High", 1], ["Medium", 2], ["Low", 3]];
-    let x = [];
-    if (prio == x) {
+
+    if (prio === undefined) {
       return undefined;
     }
     if (typeof prio == "number") {
-      x = library.filter(e => e[1] === prio);
-      return x[0][0];
+      return library.filter(e => e[1] === prio)[0][0];
+
     } else {
-      x = library.filter(e => e[0] === prio);
-      return x[0][1];
+      return library.filter(e => e[0] === prio)[0][1];
+
     }
 
   }
